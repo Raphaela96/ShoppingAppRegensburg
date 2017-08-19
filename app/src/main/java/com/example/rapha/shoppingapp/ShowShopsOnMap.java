@@ -4,6 +4,6 @@ package com.example.rapha.shoppingapp;
  * Created by rapha on 14.08.2017.
  */
 
-public class ShowShopsOnMap {
+public class ShowShopsOnMap extends CreateYourOwnShoppingList{
     //AsyncTask
 }

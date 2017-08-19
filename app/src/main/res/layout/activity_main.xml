@@ -6,13 +6,115 @@
     android:layout_height="match_parent"
     tools:context="com.example.rapha.shoppingapp.MainActivity">
 
+
     <TextView
-        android:layout_width="wrap_content"
+        android:id="@+id/titleView"
+        android:layout_width="match_parent"
+        android:layout_height="200dip"
+        android:gravity="center"
+        android:text="@string/ShoppingAppHeader"
+        android:layout_alignParentTop="true"
+        />
+
+    <Button
+        android:id="@+id/addShopButton"
+        android:layout_width="152dp"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_gravity="center"
+        android:layout_centerInParent="true"
+        android:text="@string/addShoppingDestination"
+        android:layout_below="@id/titleView"
+        />
+
+
+
+
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+
+        >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/material_blue_grey_800"
+            android:gravity="center"
+            android:padding="10dp"
+            android:paddingBottom="16dp"
+            android:text="@string/add_shop_header"
+            android:textColor="@android:color/white"
+            android:textSize="20sp" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/material_blue_grey_800"
+            android:orientation="horizontal"
+            android:padding="10dp">
+
+
+            <EditText
+                android:id="@+id/shop_edit_input"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="@color/material_blue_grey_800"
+                android:layout_weight="0.7"
+                android:hint="@string/add_shop_hint"
+                android:inputType="text"
+                android:textColor="@android:color/white"
+                android:textColorHint="@android:color/darker_gray" />
+
+            <Button
+                android:id="@+id/shop_edit_button"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.3"
+                android:text="@string/add_shop_button_confirm" />
+
+        </LinearLayout>
+
+        <ListView
+            android:id="@+id/shopping_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:animateLayoutChanges="true"
+            android:padding="10dp" />
+
+    </LinearLayout>
+
+
+    <?xml version="1.0" encoding="utf-8"?>
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/listitem_shop"
+        android:layout_width="match_parent"
+        android:layout_height="?android:attr/listPreferredItemHeight"
+        android:padding="12dp">
+
+        <TextView
+            android:id="@+id/shop_name"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentTop="true"
+            android:ellipsize="marquee"
+            android:gravity="center_vertical"
+            android:padding="5dp"
+            android:singleLine="true"
+            android:textSize="16sp" />
+
+    </RelativeLayout>
+
+
+
+    <fragment xmlns:android="http://schemas.android.com/apk/res/android"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:id="@+id/mapRegensburg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        />
 
 </android.support.constraint.ConstraintLayout>
